@@ -35,16 +35,16 @@ equipment: [],
     globals.armors.push(shadowplate, phantomShroud, titansBulkwark, sylvanGuardian, abyssalCarapace)
     
     //Equip inventory
-    for(let i = 0; i < globals.characters.length; i++)
-        {
-            let character = globals.characters[i];
-            let weapon = globals.weapons[i];
-            let armor = globals.armors[i]
+    // for(let i = 0; i < globals.characters.length; i++)
+    //     {
+    //         let character = globals.characters[i];
+    //         let weapon = globals.weapons[i];
+    //         let armor = globals.armors[i]
     
     
-            character.equipInventory(weapon);
-            character.equipInventory(armor);
-        }
+    //         character.equipInventory(weapon);
+    //         character.equipInventory(armor);
+    //     }
 
     // //Print weapon and armor list
     // console.log("WEAPON LIST")
@@ -96,17 +96,45 @@ equipment: [],
     // }
 
     //Print armor lvl < 30 list
-    console.log("ARMOR LVL < 30 LIST")
-    console.log("----------------")
+    // console.log("ARMOR LVL < 30 LIST")
+    // console.log("----------------")
+    // for(let i = 0; i < globals.characters.length; i++)
+    // {
+    //     let armor = globals.characters[i].equipmentArray[1]
+
+    //     if(armor.minLevel < 30)
+    //     {
+    //         console.log(`Name: ${armor.name}\nMin Level: ${armor.minLevel}`)
+    //         console.log("----------------")
+    //     }
+    // }
+
+    //Equip all the weapons that the caracter can use
     for(let i = 0; i < globals.characters.length; i++)
     {
-        let armor = globals.characters[i].equipmentArray[1]
-
-        if(armor.minLevel < 30)
+        let character = globals.characters[i]
+        let weapons = [];
+        console.log(`Name: ${character.name}\nLevel: ${character.level}`)
+        console.log("----------------")
+        for(let j = 0; j < globals.weapons.length; j++)
         {
-            console.log(`Name: ${armor.name}\nMin Level: ${armor.minLevel}`)
-            console.log("----------------")
+
+            let weapon = globals.weapons[j]
+            if( weapon.minLevel <= character.level)
+            {
+                console.log(`Name: ${weapon.name}\nMin Level: ${weapon.minLevel}\n`)
+                weapons.push(weapon);
+
+            }
+
         }
+        console.log("----------------")
+        character.equipInventory(weapons);
+        let armor = globals.armors[i]
+        character.equipInventory(armor)
     }
 
+
+
         
+export { globals }
