@@ -5,11 +5,11 @@ export default class Character {
         this.level = level,
         this.age = age,
         this.stamina = stamina,
-        this.equipmentArray = null
+        this.equipmentArray = []
     }
 
-    equipInventory(equipmentArray)
+    equipInventory(equipment)
     {
-        this.equipmentArray = equipmentArray
+        this.equipmentArray.push(equipment)
     }
 }
