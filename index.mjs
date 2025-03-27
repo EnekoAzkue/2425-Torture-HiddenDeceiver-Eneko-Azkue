@@ -34,7 +34,7 @@ equipment: [],
     const abyssalCarapace   = new Armor("Abyssal Carapace", 25, 10)
     globals.armors.push(shadowplate, phantomShroud, titansBulkwark, sylvanGuardian, abyssalCarapace)
     
-    //Equip inventory
+    // Equip inventory
     // for(let i = 0; i < globals.characters.length; i++)
     //     {
     //         let character = globals.characters[i];
@@ -53,7 +53,7 @@ equipment: [],
     // {
     //     let weapon = globals.weapons[i];
 
-    //     console.log(`${weapon.name}: Min Level = ${weapon.minLevel}, Damage = ${weapon.damage}, Durability = ${weapon.durability}`)
+    //     weapon.showAttributes()
     // }
     // console.log("\nARMOR LIST")
     // console.log("-----------")
@@ -61,7 +61,8 @@ equipment: [],
     // {
     //     let armor = globals.armors[i];
 
-    //     console.log(`${armor.name}: Min Level = ${armor.minLevel}, Defense = ${armor.defense}`)
+    //     armor.showAttributes()
+
     // } 
     
     // //Print character list
@@ -70,29 +71,8 @@ equipment: [],
     // for(let i = 0; i < globals.characters.length; i++)
     // {
     //     let character = globals.characters[i];
-    //     let equipment = character.equipmentArray;
-    //     let weapon = equipment[0];
-    //     let armor = equipment[1];
-    //     //Print name
-    //     console.log(character.name)
-    //     console.log("----------------\n")
 
-    //     //Print attributes
-    //     console.log("Attributes:")
-    //     console.log("----------------")
-    //     console.log(`Level: ${character.level}\nAge: ${character.age}\nStamina: ${character.stamina}`)
-    //     console.log("----------------")
-
-
-    //     //Print inventory
-    //     console.log("Weapons:")
-    //     console.log("----------------")
-    //     console.log(`Name: ${weapon.name}\nMin Level: ${weapon.minLevel}\nDamage: ${weapon.damage}\nDurability: ${weapon.durability}`)
-    //     console.log("----------------")
-    //     console.log("Armors:")
-    //     console.log("----------------")
-    //     console.log(`Name: ${armor.name}\nMin Level: ${armor.minLevel}\nDefense: ${armor.defense}`)
-    //     console.log("----------------")
+    //     character.showAttributes();
     // }
 
     //Print armor lvl < 30 list
@@ -100,69 +80,50 @@ equipment: [],
     // console.log("----------------")
     // for(let i = 0; i < globals.characters.length; i++)
     // {
-    //     let armor = globals.characters[i].equipmentArray[1]
+    //         let character = globals.characters[i];
 
-    //     if(armor.minLevel < 30)
-    //     {
-    //         console.log(`Name: ${armor.name}\nMin Level: ${armor.minLevel}`)
-    //         console.log("----------------")
-    //     }
+    //         character.showLessThanLvl30Armor();
+            
     // }
 
     //Equip all the weapons that the caracter can use
-    for(let i = 0; i < globals.characters.length; i++)
-    {
-        let character = globals.characters[i]
-        let weapons = [];
-        // console.log(`Name: ${character.name}\nLevel: ${character.level}`)
-        // console.log("----------------")
-        for(let j = 0; j < globals.weapons.length; j++)
-        {
+    // for(let i = 0; i < globals.characters.length; i++)
+    // {
+    //     let character = globals.characters[i]
 
-            let weapon = globals.weapons[j]
-            if( weapon.minLevel <= character.level)
-            {
-                // console.log(`Name: ${weapon.name}\nMin Level: ${weapon.minLevel}\n`)
-                weapons.push(weapon);
+    //     character.equipAvailableWeapons();
+    //     let armor = globals.armors[i]
+    //     character.equipInventory(armor)
+    // }
 
-            }
+    // FUMBLE
+    // let character = globals.characters[0]
+    // console.log(character)
+    // let random = Math.floor(Math.random() * (character.equipmentArray[0].length));
+    // let weapon = character.equipmentArray[0][random]
+    // let armor = character.equipmentArray[1]
 
-        }
-        // console.log("----------------")
-        character.equipInventory(weapons);
-        let armor = globals.armors[i]
-        character.equipInventory(armor)
-    }
-    let character = globals.characters[0]
-    console.log(character)
-    let random = Math.floor(Math.random() * (character.equipmentArray[0].length));
-    let weapon = character.equipmentArray[0][random]
-    let armor = character.equipmentArray[1]
-
-    console.log(weapon)
-
-
+    // console.log(weapon)
     
-    console.log("BEFORE")
-    console.log("defense")
-    console.log(character.equipmentArray[1].defense)
-    console.log("stamina")
-    console.log(character.stamina)
-    console.log("durability")
-    console.log(weapon.durability)
-    
+    // console.log("BEFORE")
+    // console.log("defense")
+    // console.log(character.equipmentArray[1].defense)
+    // console.log("stamina")
+    // console.log(character.stamina)
+    // console.log("durability")
+    // console.log(weapon.durability)
 
-    let fumble = globals.characters[0].fumble(character,random)
+    // let fumble = globals.characters[0].fumble(character,random)
 
-    if(fumble)
-    {
-    console.log("\nAFTER")
-    console.log("defense")
-    console.log(character.equipmentArray[1].defense)
-    console.log("stamina")
-    console.log(character.stamina)
-    console.log("durability")
-    console.log(weapon.durability)
-    }
+    // if(fumble)
+    // {
+    // console.log("\nAFTER")
+    // console.log("defense")
+    // console.log(character.equipmentArray[1].defense)
+    // console.log("stamina")
+    // console.log(character.stamina)
+    // console.log("durability")
+    // console.log(weapon.durability)
+    // }
         
 export { globals }

@@ -6,4 +6,9 @@ export default class Weapon {
         this.damage = damage,
         this.durability = durability
     }
+
+    showAttributes()
+    {
+        console.log(`${this.name}: Min Level = ${this.minLevel}, Damage = ${this.damage}, Durability = ${this.durability}`)
+    }
 }
