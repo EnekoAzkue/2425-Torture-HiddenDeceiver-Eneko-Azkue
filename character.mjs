@@ -12,4 +12,20 @@ export default class Character {
     {
         this.equipmentArray.push(equipment)
     }
+
+    fumble(character,random)
+    {
+
+        let weapon = character.equipmentArray[0][random]
+        let totalDamage = Math.ceil((weapon.damage + character.level)/4) 
+
+        console.log("\nTDamage")
+        console.log(totalDamage)
+        character.equipmentArray[1].defense -= totalDamage;
+        character.stamina -= 5
+
+        character.equipmentArray[0][random].durability = character.equipmentArray[0][random].durability - 2
+        let isFumbleDone = true
+        return isFumbleDone;
+    }
 }

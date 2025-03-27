@@ -114,27 +114,29 @@ equipment: [],
     {
         let character = globals.characters[i]
         let weapons = [];
-        console.log(`Name: ${character.name}\nLevel: ${character.level}`)
-        console.log("----------------")
+        // console.log(`Name: ${character.name}\nLevel: ${character.level}`)
+        // console.log("----------------")
         for(let j = 0; j < globals.weapons.length; j++)
         {
 
             let weapon = globals.weapons[j]
             if( weapon.minLevel <= character.level)
             {
-                console.log(`Name: ${weapon.name}\nMin Level: ${weapon.minLevel}\n`)
+                // console.log(`Name: ${weapon.name}\nMin Level: ${weapon.minLevel}\n`)
                 weapons.push(weapon);
 
             }
 
         }
-        console.log("----------------")
+        // console.log("----------------")
         character.equipInventory(weapons);
         let armor = globals.armors[i]
         character.equipInventory(armor)
     }
+    let character = globals.characters[0]
 
+    let random = Math.floor(Math.random() * (character.equipmentArray[0].length));
 
+    let isFumbleDone = globals.characters[0].fumble(character,random)
 
-        
 export { globals }
