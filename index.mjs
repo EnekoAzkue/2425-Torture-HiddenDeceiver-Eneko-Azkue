@@ -64,36 +64,49 @@ equipment: [],
     //     console.log(`${armor.name}: Min Level = ${armor.minLevel}, Defense = ${armor.defense}`)
     // } 
     
-    //Print character list
+    // //Print character list
+    // console.log("\nCHARACTER LIST")
+    // console.log("----------------\n")
+    // for(let i = 0; i < globals.characters.length; i++)
+    // {
+    //     let character = globals.characters[i];
+    //     let equipment = character.equipmentArray;
+    //     let weapon = equipment[0];
+    //     let armor = equipment[1];
+    //     //Print name
+    //     console.log(character.name)
+    //     console.log("----------------\n")
 
-    console.log("\nCHARACTER LIST")
-    console.log("----------------\n")
+    //     //Print attributes
+    //     console.log("Attributes:")
+    //     console.log("----------------")
+    //     console.log(`Level: ${character.level}\nAge: ${character.age}\nStamina: ${character.stamina}`)
+    //     console.log("----------------")
+
+
+    //     //Print inventory
+    //     console.log("Weapons:")
+    //     console.log("----------------")
+    //     console.log(`Name: ${weapon.name}\nMin Level: ${weapon.minLevel}\nDamage: ${weapon.damage}\nDurability: ${weapon.durability}`)
+    //     console.log("----------------")
+    //     console.log("Armors:")
+    //     console.log("----------------")
+    //     console.log(`Name: ${armor.name}\nMin Level: ${armor.minLevel}\nDefense: ${armor.defense}`)
+    //     console.log("----------------")
+    // }
+
+    //Print armor lvl < 30 list
+    console.log("ARMOR LVL < 30 LIST")
+    console.log("----------------")
     for(let i = 0; i < globals.characters.length; i++)
     {
-        let character = globals.characters[i];
-        let equipment = character.equipmentArray;
-        let weapon = equipment[0];
-        let armor = equipment[1];
-        //Print name
-        console.log(character.name)
-        console.log("----------------\n")
+        let armor = globals.characters[i].equipmentArray[1]
 
-        //Print attributes
-        console.log("Attributes:")
-        console.log("----------------")
-        console.log(`Level: ${character.level}\nAge: ${character.age}\nStamina: ${character.stamina}`)
-        console.log("----------------")
-
-
-        //Print inventory
-        console.log("Weapons:")
-        console.log("----------------")
-        console.log(`Name: ${weapon.name}\nMin Level: ${weapon.minLevel}\nDamage: ${weapon.damage}\nDurability: ${weapon.durability}`)
-        console.log("----------------")
-        console.log("Armors:")
-        console.log("----------------")
-        console.log(`Name: ${armor.name}\nMin Level: ${armor.minLevel}\nDefense: ${armor.defense}`)
-        console.log("----------------")
+        if(armor.minLevel < 30)
+        {
+            console.log(`Name: ${armor.name}\nMin Level: ${armor.minLevel}`)
+            console.log("----------------")
+        }
     }
 
         
