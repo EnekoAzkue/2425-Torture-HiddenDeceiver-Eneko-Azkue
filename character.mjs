@@ -1,6 +1,7 @@
 export default class Character {
-    constructor(level, age, stamina)
+    constructor(name, level, age, stamina)
     {
+        this.name = name,
         this.level = level,
         this.age = age,
         this.stamina = stamina,

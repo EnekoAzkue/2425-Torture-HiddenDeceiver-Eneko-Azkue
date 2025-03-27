@@ -1,6 +1,7 @@
 export default class Armor {
-    constructor(minLevel, defense)
+    constructor(name, minLevel, defense)
     {
+        this.name = name,
         this.minLevel = minLevel,
         this.defense = defense
     }
