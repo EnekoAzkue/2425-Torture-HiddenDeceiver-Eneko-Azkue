@@ -134,9 +134,35 @@ equipment: [],
         character.equipInventory(armor)
     }
     let character = globals.characters[0]
-
+    console.log(character)
     let random = Math.floor(Math.random() * (character.equipmentArray[0].length));
+    let weapon = character.equipmentArray[0][random]
+    let armor = character.equipmentArray[1]
 
-    let isFumbleDone = globals.characters[0].fumble(character,random)
+    console.log(weapon)
 
+
+    
+    console.log("BEFORE")
+    console.log("defense")
+    console.log(character.equipmentArray[1].defense)
+    console.log("stamina")
+    console.log(character.stamina)
+    console.log("durability")
+    console.log(weapon.durability)
+    
+
+    let fumble = globals.characters[0].fumble(character,random)
+
+    if(fumble)
+    {
+    console.log("\nAFTER")
+    console.log("defense")
+    console.log(character.equipmentArray[1].defense)
+    console.log("stamina")
+    console.log(character.stamina)
+    console.log("durability")
+    console.log(weapon.durability)
+    }
+        
 export { globals }
